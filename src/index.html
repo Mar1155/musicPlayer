@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/dist/output.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.css" rel="stylesheet" />
+
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js" integrity="sha512-YsR46MmyChktsyMMou+Bs74oCa/CDdwft7rJ5wlnmDzMj1mzqncsfJamEEf99Nk7IB0JpTMo5hS8rxB49FUktQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.js" integrity="sha512-fCU+rmH3nS/RJaTSl/ylo/PxwWIZwJts3rfxRylSPqGYMJGPLXvPJGOTF+ECb0K5m9rSXbkCNg2PR7WKGWRTVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<style>
+    input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        border: none;
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        background: purple;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <div class="w-screen h-screen flex justify-center items-center bg-background bg-center bg-cover">
+        <div class="flex flex-col bg-dark-gray w-[300px] p-4 justify-center items-center rounded-xl gap-4">
+            <div class="w-full h-auto rounded-xl overflow-hidden">
+                <img src="assets/cover-1.png" alt="" class="w-full h-auto">
+            </div>
+            <div class="flex flex-col justify-center items-center w-full ">
+                <p class="text-light-gray text-[16px]" id="title">Title</p>
+                <p class="text-mygray text-[12px]" id="author">Author</p>
+            </div>
+
+            <audio id="audio" src="/src/assets/tagmp3_lost-in-city-lights-145038.mp3"></audio>
+
+            <!-- progress bar -->
+            <div class="flex flex-col w-full">
+                <div class="flex justify-between w-full">
+                    <p class="text-mygray text-[10px]" id="duration">
+                        0:00
+                    </p>
+                    <p class="text-mygray text-[10px]" id="totalDuration">
+                        0:00
+                    </p>
+                </div>
+                <p>
+                    <input type="range" name="" id="progressbar" class="w-full h-2 bg-purple-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700 accent-slate-500" value="0"
+                        min="0" max="100">
+                </p>
+            </div>
+
+            <!-- controls -->
+            <div class="flex w-full justify-center items-center">
+                <!-- next button -->
+                <div class="p-2 rounded-full cursor-pointer" onclick="seekBackward()">
+                    <img src="assets/Stop_and_play_fill.svg" alt="">
+                </div>
+                <!-- play button -->
+                <div onclick="play_toggle()"
+                    class="p-2 flex justify-center items-center rounded-full bg-mypink cursor-pointer hover:shadow-md hover:shadow-light-gray">
+                    <img src="assets/Play_fill.svg" alt="">
+                </div>
+                <!-- back button -->
+                <div class="p-2 rounded-full cursor-pointer ">
+                    <img src="assets/Stop_and_play_fill_reverse.svg" onclick="seekForward()">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.js"></script>
+</body>
+<script src=" https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+<script src="./main.js"></script>
+
+
+</html>
